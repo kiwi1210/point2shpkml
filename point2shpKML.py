@@ -1,9 +1,9 @@
 # -*- coding: big5
-# ­Yµ{¦¡¤¤¦³¨Ï¥Î¤¤¤å¡A¥²¶·«ü©ú¨Ï¥ÎBIG5½X¡A«e­zªº¦r½X©w¸q¥²¶·¦bµ{¦¡ªº²Ä¤@©Î²Ä¤G¦æ
-# ¦r½X©w¸qªº¤è¦¡¥i°Ñ¦Ò¡Ghttp://www.python.org/dev/peps/pep-0263/
-# Python¤ä´©ªº¦r½X¡G http://www.python.org/doc/2.4/lib/standard-encodings.html
+# è‹¥ç¨‹å¼ä¸­æœ‰ä½¿ç”¨ä¸­æ–‡ï¼Œå¿…é ˆæŒ‡æ˜ä½¿ç”¨BIG5ç¢¼ï¼Œå‰è¿°çš„å­—ç¢¼å®šç¾©å¿…é ˆåœ¨ç¨‹å¼çš„ç¬¬ä¸€æˆ–ç¬¬äºŒè¡Œ
+# å­—ç¢¼å®šç¾©çš„æ–¹å¼å¯åƒè€ƒï¼šhttp://www.python.org/dev/peps/pep-0263/
+# Pythonæ”¯æ´çš„å­—ç¢¼ï¼š http://www.python.org/doc/2.4/lib/standard-encodings.html
 
-""" ¦¹µ{¦¡¥Ü§@¬°ÀË¬d¯è·Ó¼v¹³¬O§_²[»\¾÷±Ó°Ïªºµ{¦¡¤§GUI¤¶­± """
+""" æ­¤ç¨‹å¼ç¤ºä½œç‚ºæª¢æŸ¥èˆªç…§å½±åƒæ˜¯å¦æ¶µè“‹æ©Ÿæ•å€çš„ç¨‹å¼ä¹‹GUIä»‹é¢ """
 
 import os, sys
 import wx
@@ -55,28 +55,28 @@ class MyFrame(wx.Frame):
         wx.Frame.__init__(self, parent=None, id=wx.ID_ANY, title="EXIF Reader", size=(540,550),
                 style = wx.DEFAULT_FRAME_STYLE & ~wx.MAXIMIZE_BOX ^ wx.RESIZE_BORDER)
 
-        #logo_path = resource_path("nccu_logo.bmp")
+        #logo_path = resource_path("image_name.bmp")
         #self.window.iconbitmap(image_path)
-        ico = wx.Icon("nccu_logo.bmp", wx.BITMAP_TYPE_ICO)
+        ico = wx.Icon("image_name.bmp", wx.BITMAP_TYPE_ICO)
         self.SetIcon(ico)
                 
         # Add a Panel
         panel = wx.Panel(self, wx.ID_ANY)
         
-        wx.StaticText(parent=panel, label="¿é¤JÀÉ®×:", pos=(15,10))
+        wx.StaticText(parent=panel, label="è¼¸å…¥æª”æ¡ˆ:", pos=(15,10))
         self.a = wx.TextCtrl(parent=panel,pos=(140,10),size=(325,20))
         self.btn1 = wx.Button(parent=panel,label="...",pos=(480,10),size=(40,20))
         self.Bind(wx.EVT_BUTTON, self.OnBtn1, self.btn1)
 
-        wx.StaticText(parent=panel, label="¿é¥XÀÉ®×:", pos=(15,40))
+        wx.StaticText(parent=panel, label="è¼¸å‡ºæª”æ¡ˆ:", pos=(15,40))
         self.b = wx.TextCtrl(parent=panel,pos=(140,40),size=(325,20))
         self.btn2 = wx.Button(parent=panel,label="...",pos=(480,40),size=(40,20))
         self.Bind(wx.EVT_BUTTON, self.OnBtn2, self.btn2)
 
-        self.btn3 = wx.Button(parent=panel,label=" ²M°£°T®§ ",pos=(15,70),size=(100,20))
+        self.btn3 = wx.Button(parent=panel,label=" æ¸…é™¤è¨Šæ¯ ",pos=(15,70),size=(100,20))
         self.Bind(wx.EVT_BUTTON, self.OnBtn3, self.btn3)
 
-        self.btn4 = wx.Button(parent=panel,label=" ½T©w ",pos=(460,70),size=(60,20))
+        self.btn4 = wx.Button(parent=panel,label=" ç¢ºå®š ",pos=(460,70),size=(60,20))
         self.Bind(wx.EVT_BUTTON, self.OnBtn4, self.btn4)
 
         self.txtCtrl = wx.TextCtrl(panel, id=wx.ID_ANY, style=wx.TE_MULTILINE, pos=(10,110), size=(510,390))
@@ -86,15 +86,15 @@ class MyFrame(wx.Frame):
 
     def OnBtn1(self, evt):
         global selFile
-        # In this case we include a "New directory" button. DIR¥´¶}¸ê®Æ§¨«Çµ¡¡C
+        # In this case we include a "New directory" button. DIRæ‰“é–‹è³‡æ–™å¤¾å®¤çª—ã€‚
         #dlg = wx.DirDialog(
-        #    self, message="¿ï¾Ü¿é¤J¸ê®Æ§¨:",
+        #    self, message="é¸æ“‡è¼¸å…¥è³‡æ–™å¤¾:",
         #    style=wx.DD_DEFAULT_STYLE | wx.DD_DIR_MUST_EXIST
         #    )
                      
 # Choose the output file. 
         dlg = wx.FileDialog(
-            self, message="¿ï¾ÜSEL¸ê®ÆÀÉ:",
+            self, message="é¸æ“‡SELè³‡æ–™æª”:",
             defaultDir=currDir, 
             defaultFile="",
             wildcard="*.sel",    #default file format: ".sel", you can edit file format according to your input file format.
@@ -118,7 +118,7 @@ class MyFrame(wx.Frame):
         
         # Choose the output file. 
         dlg = wx.FileDialog(
-            self, message="¿ï¾Ü¿é¥XÀÉ®×:",
+            self, message="é¸æ“‡è¼¸å‡ºæª”æ¡ˆ:",
             defaultDir=currDir, 
             defaultFile="",
             wildcard="*.shp",    #default file format: ".shp"
@@ -145,13 +145,13 @@ class MyFrame(wx.Frame):
     def OnBtn4(self, evt):
         
         try:
-            self.txtCtrl.WriteText('¿é¤JÀÉ®×¡G %s\n' % selFile)
+            self.txtCtrl.WriteText('è¼¸å…¥æª”æ¡ˆï¼š %s\n' % selFile)
             self.shp_generate()
             
-            self.txtCtrl.WriteText('¿é¥XÀÉ®×¡G %s %s\n' % (shpFile, kmlFile))
-            self.txtCtrl.WriteText('¦¨¥\!\n')
+            self.txtCtrl.WriteText('è¼¸å‡ºæª”æ¡ˆï¼š %s %s\n' % (shpFile, kmlFile))
+            self.txtCtrl.WriteText('æˆåŠŸ!\n')
         except:
-            print('¥¢±Ñ!')
+            print('å¤±æ•—!')
     
     # def shp_generate(fileIn, fileOut):
     def shp_generate(self):
@@ -164,18 +164,18 @@ class MyFrame(wx.Frame):
 
 
         try:
-            #¶}±Ò¸ê®ÆÀÉ®×¡A³]©w¤å¦r½s½X¬° Big5
+            #é–‹å•Ÿè³‡æ–™æª”æ¡ˆï¼Œè¨­å®šæ–‡å­—ç·¨ç¢¼ç‚º Big5
             fin=open(selFile, encoding='big5')
-            print("¸ê®ÆÀÉÅª¨ú¦¨¥\¡A¸ê®ÆÂà´«¤¤......")
+            print("è³‡æ–™æª”è®€å–æˆåŠŸï¼Œè³‡æ–™è½‰æ›ä¸­......")
         except:
-            print("¿é¤J¸ê®ÆÀÉ¦W¿ù»~!")
+            print("è¼¸å…¥è³‡æ–™æª”åéŒ¯èª¤!")
 
         # Generate a point shapefile. File name is offered by user.
         shp = shapefile.Writer(shpFile, shapeType = shapefile.POINT)
 
-        #Add attribute values(ÂI¸¹,¾î§¤¼Ğ(X),Áa®y¼Ğ(Y),¥¿°ª(Z),±±¨îÂIºØÃş,´ú¶q¤èªk,¨Ï¥Î»ö¾¹,
-        #´ú©w¤é´Á(yyyymmdd),´ú¶q­û,°O¿ıªÌ,ÂI¤§°Oºô­¶,³Æµù)
-        #Äæ¦ì®æ¦¡©w¸q½Ğ°Ñ¦Ò¡Ghttps://pypi.org/project/pyshp/
+        #Add attribute values(é»è™Ÿ,æ©«åæ¨™(X),ç¸±åº§æ¨™(Y),æ­£é«˜(Z),æ§åˆ¶é»ç¨®é¡,æ¸¬é‡æ–¹æ³•,ä½¿ç”¨å„€å™¨,
+        #æ¸¬å®šæ—¥æœŸ(yyyymmdd),æ¸¬é‡å“¡,è¨˜éŒ„è€…,é»ä¹‹è¨˜ç¶²é ,å‚™è¨»)
+        #æ¬„ä½æ ¼å¼å®šç¾©è«‹åƒè€ƒï¼šhttps://pypi.org/project/pyshp/
         #
         shp.field('NAME','C',20) 
         shp.field('X_TWD97','N',15,3)
@@ -195,29 +195,29 @@ class MyFrame(wx.Frame):
         shp.field('heading','N',2)
 
         
-        #¦C¥XÄæ¦ìªº©w¸q¡A¥H¨ÑÀË¬d·s¼WªºÄæ¦ì¬O§_¥¿½T
+        #åˆ—å‡ºæ¬„ä½çš„å®šç¾©ï¼Œä»¥ä¾›æª¢æŸ¥æ–°å¢çš„æ¬„ä½æ˜¯å¦æ­£ç¢º
         print(shp.fields)
         
-        #Åª¨ú²Ä¤@¦CªºÀÉÀY¡A¦¹¬°Äæ¦ì»¡©ú¡A¤£Äİ©ó¸ê®Æªº¤@³¡¤À
+        #è®€å–ç¬¬ä¸€åˆ—çš„æª”é ­ï¼Œæ­¤ç‚ºæ¬„ä½èªªæ˜ï¼Œä¸å±¬æ–¼è³‡æ–™çš„ä¸€éƒ¨åˆ†
         first_line = fin.readline()
         second_line = fin.readline()
 
         for line in fin:
             
-            #line.strip() ­º¥ı¥h±¼¨C¤@¦C¿é¤J¸ê®Æªºµ²§À¸õ¦æ²Å¸¹
-            #¦pªG len(s) == 0¡Aªí¥Ü¦¹¦C¬°ªÅ¥Õ¡A¥i©¿²¤¤§
+            #line.strip() é¦–å…ˆå»æ‰æ¯ä¸€åˆ—è¼¸å…¥è³‡æ–™çš„çµå°¾è·³è¡Œç¬¦è™Ÿ
+            #å¦‚æœ len(s) == 0ï¼Œè¡¨ç¤ºæ­¤åˆ—ç‚ºç©ºç™½ï¼Œå¯å¿½ç•¥ä¹‹
             s = line.strip()
             if len(s) == 0:
                 continue
         
-            #s.split(',') ¥H³r¸¹ (,) ¤À¹j¸ê®Æ
-            #¨C¤@¦C¿é¤Jªº¸ê®Æ¤À¹j«á¦U§O«ü¬£µ¹µ¥¸¹¥ªÃäªºÅÜ¼Æ
+            #s.split(',') ä»¥é€—è™Ÿ (,) åˆ†éš”è³‡æ–™
+            #æ¯ä¸€åˆ—è¼¸å…¥çš„è³‡æ–™åˆ†éš”å¾Œå„åˆ¥æŒ‡æ´¾çµ¦ç­‰è™Ÿå·¦é‚Šçš„è®Šæ•¸
             name1,name2,x_97,y_97,h_97,x_67,y_67,h_67,airline,date,time,sec,Map,camera,aim,available,heading,a,b,c,d,e,f,g,h,i,j,k,l = s.split( )
 
             
 
 
-            #±qÀÉ®×Åª¶i¨Óªº¸ê®Æ¬°¤å¦r®æ¦¡ (string)¡A¥²¶·Âà´«¬°¯BÂI¼Æ (floating point) ¤~¯à¶i¦æ¹Bºâ
+            #å¾æª”æ¡ˆè®€é€²ä¾†çš„è³‡æ–™ç‚ºæ–‡å­—æ ¼å¼ (string)ï¼Œå¿…é ˆè½‰æ›ç‚ºæµ®é»æ•¸ (floating point) æ‰èƒ½é€²è¡Œé‹ç®—
             NAME = name1+" "+name2
             X_97=float(x_97)
             Y_97=float(y_97)
@@ -237,28 +237,28 @@ class MyFrame(wx.Frame):
             lat, lon = c.convert(X_97, Y_97)
 
             
-            #¥[¤JÂI¦ìªÅ¶¡¸ê®Æ(§¤¼Ğ)¥H¤ÎÄİ©Ê¸ê®Æ
-            shp.point(lat,lon)      #ªÅ¶¡¸ê®Æ
-            shp.record(NAME,lat,lon,H_97,X_67,Y_67,H_67,AIRLINE,DATE,TIME,SEC,Map,CAMERA,AIM,available,HEADING)    #Äİ©Ê¸ê®Æ
+            #åŠ å…¥é»ä½ç©ºé–“è³‡æ–™(åæ¨™)ä»¥åŠå±¬æ€§è³‡æ–™
+            shp.point(lat,lon)      #ç©ºé–“è³‡æ–™
+            shp.record(NAME,lat,lon,H_97,X_67,Y_67,H_67,AIRLINE,DATE,TIME,SEC,Map,CAMERA,AIM,available,HEADING)    #å±¬æ€§è³‡æ–™
 
             
             fout.write(place_mark.format(NAME,float(lon),float(lat),H_97))
             # fout.write(place_mark.format(NAME,Y_97,X_97,H_97))
 
-        #¦s¦¨ÀÉ¦W¬°fileOutªºshapefileÀÉ
+        #å­˜æˆæª”åç‚ºfileOutçš„shapefileæª”
         try:
-            #Ãö³¬¿é¥Xªº shapefile ÀÉ®×¤~¯à½T«O¸ê®Æ¼g¤JºÏºĞ¤¤
+            #é—œé–‰è¼¸å‡ºçš„ shapefile æª”æ¡ˆæ‰èƒ½ç¢ºä¿è³‡æ–™å¯«å…¥ç£ç¢Ÿä¸­
             shp.close()
             
-            print("Shapefile¹ÏÀÉ %s ²£»s¦¨¥\!" % shpFile)
+            print("Shapefileåœ–æª” %s ç”¢è£½æˆåŠŸ!" % shpFile)
         except:
-            print("Shapefile¹ÏÀÉ %s ²£»s¥¢±Ñ!" % shpFile)
+            print("Shapefileåœ–æª” %s ç”¢è£½å¤±æ•—!" % shpFile)
         
         fout.write(kml_trailer)
         fout.close()
 
 
-        #Ãö³¬¿é¤J¸ê®ÆÀÉ®×    
+        #é—œé–‰è¼¸å…¥è³‡æ–™æª”æ¡ˆ    
         fin.close()
 
     
