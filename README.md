@@ -1,10 +1,10 @@
 # point2shpkml
 Convert point data to shapefile and KML with GUI (Graphical User Interface).
+記錄自己在2021年末時的其中一項作業，撰寫圖形使用介面(Graphical User Interface，GUI)，將航攝紀錄的點位坐標資料轉換成 Shapefile 和 KML 圖檔。
 
 ## Reference
 http://blog.ez2learn.com/2009/08/15/lat-lon-to-twd97/
 
-記錄自己在2021年末時的其中一項作業，撰寫圖形使用介面(Graphical User Interface，GUI)，將航攝紀錄的點位坐標資料轉換成 Shapefile 和 KML 圖檔。
 
 ## 資料介紹
 林務局農林航空測量所 (農航所) 使用高解像力數位相機 DMC (Digital Mapping Camera) 拍攝航空照片，並紀錄每張航空照片之相關資料，包括：任務編號、照片號碼、品質、投影中心座標、拍照時間、對應基本圖圖號、相機代號等，航空攝影紀錄資料可從農航所網站下載。
